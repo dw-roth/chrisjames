@@ -1,0 +1,43 @@
+:root {
+  --border-color-button: #181638;
+  --background-color-button: #4b4bd1;
+  --font-family-roboto: "Roboto", sans-serif;
+  --font-family-roboto-serif: "Roboto Serif", serif;
+
+  --background-clientsuccess1-start: #c1b9b0;
+  --background-clientsuccess1-end: #d8d3cd;
+  --color-clientsuccess1: #36454f; 
+  --background-clientsuccess2-start: #71909f;
+  --background-clientsuccess2-end: #5b7b8c;
+  --color-clientsuccess2: white;
+
+  --background-dark: #007f7f;
+  --background-light: #f9f9f9;
+  --text-light: #ffffff;
+  --text-dark: #0d0c1f;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-roboto);
+  font-weight: 400;
+  background-color: var(--background-color-body);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.roboto-serif {
+    font-family: var(--font-family-roboto-serif);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "GRAD" 0;
+}

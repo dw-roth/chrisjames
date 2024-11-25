@@ -1,0 +1,189 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+import { getComponentData } from '../scripts/utils.js';
+import { Image } from 'astro:assets';
+
+const data = await getComponentData('tri', `${id}`);
+const gradientStart = data.gradientStart;
+const gradientEnd = data.gradientEnd;
+const headingColor = data.headingColor;
+const textBlockColor = data.textBlockColor;
+const textBlockBackgroundColor = data.textBlockBackgroundColor;
+const pointingArrowColor = data.pointingArrowColor;
+const pointingArrowGradientStart = data.pointingArrowGradientStart;
+const pointingArrowGradientEnd = data.pointingArrowGradientEnd;
+---
+
+<section class={`split ${data.textOnRight ? 'right' : ''}`}>
+  <div class="arrowBlock">
+    <div class="block halfBlock padded">
+      <h2>{data.heading}</h2>
+    </div>
+    <div class={`pointingArrow ${data.textOnRight ? 'right' : ""}`}> </div>
+  </div>
+  <div class="imageContainer">
+    <Image class="image" src={import(`../images/${data.imageUrl}.jpeg`)} alt={data.altText}>
+  </div>
+</section>
+
+<section class="block textBlock">
+  <p>{data.text}</p>
+</section>
+
+<style define:vars={{ gradientStart, gradientEnd, headingColor, textBlockColor, textBlockBackgroundColor, pointingArrowGradientStart, pointingArrowGradientEnd, pointingArrowColor }}>
+    h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--headingColor);
+      text-wrap: balance;
+    }
+
+    .split {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .split.right {
+      flex-direction: column-reverse;
+    }
+
+    .split > * {
+      flex: 1;
+    }
+
+    .block {
+      position: relative;
+      background: linear-gradient(45deg, var(--gradientStart), var(--gradientEnd));
+    }
+
+    .block.textBlock {
+        background: var(--textBlockBackgroundColor);
+        color: hsl(0, 0%, 95%);
+    }
+
+    section,
+    .padded {
+      box-sizing: border-box;
+      padding: 20px 20px;
+    }
+    
+    section > :first-child,
+    .padded > :first-child {
+      margin-top: 0;
+    }
+
+    section > :last-child,
+    .padded > :last-child {
+      margin-bottom: 0;
+    }
+
+    .arrowBlock {
+      display: flex;
+      position: relative;
+    }
+
+    .halfBlock {
+      position: relative;
+      align-items: center;
+      display: flex;
+      flex: 1;
+    }
+
+    .pointingArrow {
+      background: linear-gradient(45deg, var(--pointingArrowGradientStart), var(--pointingArrowGradientEnd));
+      bottom: -10px;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      transform: rotate(45deg);
+      z-index: 1;
+    }
+
+    .pointingArrow:not(.right) {
+      left: 20px;
+    }
+
+    .pointingArrow.right {
+      right: 20px;
+    }
+
+    .imageContainer {
+      background: #dedede;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    p {
+      line-height: 1.7em;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+@media (min-width: 795px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .block > h2 {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: .25;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .section.padded {
+    padding: 50px 70px;
+  }
+
+  .imageContainer {
+    min-height: 300px;
+  }
+
+  .pointingArrow {
+    bottom: -20px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .pointingArrow:not(.right) {
+    left: 70px;
+  }
+
+  .pointingArrow.right {
+    right: 70px;
+  }
+
+  .split {
+    flex-direction: row;
+  }
+
+  .split.right {
+    flex-direction: row-reverse;
+  }
+
+  .section, .padded {
+    padding: 50px 70px;
+  }
+}
+</style>

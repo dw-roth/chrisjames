@@ -1,0 +1,15 @@
+{ 
+  "textOnRight" : false,
+  "imageUrl": "client-01",
+  "altText": "Picture of couple celebrating purchase of first home",
+  "gradientStart": "hsl(32, 12%, 72%)",
+  "gradientEnd": "hsl(32, 12%, 72%)",
+  "headingColor": "hsl(204, 19%, 26%)",
+  "textBlockColor": "hsl(0, 0%, 95%)",
+  "textBlockBackgroundColor": "hsl(195, 16%, 15%)",
+  "pointingArrowColor": "hsl(32, 12%, 72%)",
+  "pointingArrowGradientStart": "hsl(32, 12%, 72%)",
+  "pointingArrowGradientEnd": "hsl(32, 12%, 72%)",
+  "heading": "The Anzar Family",
+  "text": "Justo ligula metus, lectus suscipit varius, id quis metus pretium. Magna et vestibulum, euismod pharetra vestibulum, eleifend eget elementum ridiculus. Et semper dictumst, ipsum orci posuere, imperdiet varius massa faucibus. Proin consequat tincidunt, massa dui fermentum, ante dolor quam etiam. Nam eget quam, proin nascetur id, tempor ligula aenean ante."
+}

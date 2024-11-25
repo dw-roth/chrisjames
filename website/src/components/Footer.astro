@@ -1,0 +1,38 @@
+---
+import { getComponentDataNoId } from '../scripts/utils.js';
+
+const data = await getComponentDataNoId('footer');
+const backgroundColor = data.backgroundColor;
+const color = data.color;
+---
+<footer class="footer">
+  <div class="center">
+    <small>&copy</small> <span class="text-size-small">{data.name}. All rights reserved</span>
+    <span class="text-size-small"><a href="/privacy/" class="footer-link">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('small').insertAdjacentText('beforeend',`${new Date().getFullYear()}`);
+</script>
+
+<style define:vars={{ backgroundColor, color }}>
+  .footer {
+      background-color: var(--backgroundColor);
+      color: var(--color);
+      padding: 5rem 5% 5rem 5%;
+  }
+
+  .footer-link {
+      padding-left: 2rem;
+      color: white;
+  }
+
+  .text-size-small {
+      font-size: .9rem;
+  }
+
+  .center {
+      text-align: center;
+  }
+</style>

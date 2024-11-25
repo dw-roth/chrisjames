@@ -1,0 +1,94 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+import { getComponentData } from '../scripts/utils.js';
+import { Image } from 'astro:assets';
+
+const data = await getComponentData('split', `${id}`);
+const gradientStart = data.gradientStart;
+const gradientEnd = data.gradientEnd;
+const color = data.color;
+const textOnLeft = data.textOnLeft;
+---
+
+<section class="section"> 
+  <div class="grid-container">
+
+    <div class={`text-column ${textOnLeft ? 'left-column' : 'right-column'}`}>
+      <h2 class="heading"> {data.heading}</h2>
+      <p class="text-body">{data.text}</p>
+    </div>
+
+    <div class={`image-column ${textOnLeft ? 'right-column' : 'left-column'}`}>
+      <Image 
+        src={import(`../images/${data.imageUrl}.jpeg`)} 
+         widths={[500, 892]}
+         sizes={`(max-width: 991px) 892px, 500`}
+        alt={data.altText}
+      />
+    </div>
+
+  </div> 
+</section>
+
+<style define:vars={{ color, gradientStart, gradientEnd }}>
+    .section {
+      background: linear-gradient(45deg, var(--gradientStart), var(--gradientEnd));
+      color: var(--color);
+      max-width: none;
+      padding: 3rem 5% 5rem 5%;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-column-gap: 5rem;
+      grid-row-gap: 4rem;
+      justify-content: stretch;
+      align-items: center;
+    }
+    .text-column {
+      max-width: 100%;
+      height: auto;
+    }
+    .left-column {
+      order: 1;
+    }
+    .right-column {
+      order: 2;
+    }
+    .heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    .text-body {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+    }
+    .image-column img {
+      max-width: 100%;
+      height: auto;
+      align-self: center;
+    }
+
+/* 768px through 991px is bootstraps 'medium' size */
+@media screen and (max-width: 991px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row dense;
+        align-items: center;
+    }
+    .text-column {
+      order: 1;
+    }
+    .image-column {
+      order: 2;
+    }
+}
+</style>

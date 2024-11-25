@@ -1,0 +1,15 @@
+{ 
+  "textOnRight" : true,
+  "imageUrl": "client-02",
+  "altText": "Picture of client signing closing document for home purchase",
+  "gradientStart": "hsl(200, 19%, 53%)",
+  "gradientEnd": "hsl(201, 21%, 45%)",
+  "headingColor": "hsl(0, 0%, 95%)",
+  "textBlockColor": "hsl(0, 0%, 95%)",
+  "textBlockBackgroundColor": "hsl(195, 16%, 15%)",
+  "pointingArrowColor": "hsl(200, 18%, 51%)",
+  "pointingArrowGradientStart": "hsl(200, 18%, 51%)",
+  "pointingArrowGradientEnd": "hsl(200, 19%, 50%)",
+  "heading": "Michelle Styer",
+  "text": "Justo ligula metus, lectus suscipit varius, id quis metus pretium. Magna et vestibulum, euismod pharetra vestibulum, eleifend eget elementum ridiculus. Et semper dictumst, ipsum orci posuere, imperdiet varius massa faucibus. Proin consequat tincidunt, massa dui fermentum, ante dolor quam etiam."
+}

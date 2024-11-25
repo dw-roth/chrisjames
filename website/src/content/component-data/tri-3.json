@@ -1,0 +1,15 @@
+{ 
+  "textOnLeft" : true,
+  "imageUrl": "client-03",
+  "altText": "Picture of home buyer and home seller shaking hands to close deal",
+  "gradientStart": "hsl(32, 12%, 72%)",
+  "gradientEnd": "hsl(32, 12%, 72%)",
+  "headingColor": "hsl(204, 19%, 26%)",
+  "textBlockColor": "hsl(0, 0%, 95%)",
+  "textBlockBackgroundColor": "hsl(195, 16%, 15%)",
+  "pointingArrowColor": "hsl(32, 12%, 72%)",
+  "pointingArrowGradientStart": "hsl(32, 12%, 72%)",
+  "pointingArrowGradientEnd": "hsl(32, 12%, 72%)",
+  "heading": "The Watson Family", 
+  "text": "Nam eget quam, proin nascetur id, tempor ligula aenean ante. Imperdiet ut aliquam, vivamus volutpat ullamcorper, arcu risus ac ultrices. Velit consectetur lectus, convallis nunc pretium, hac eu enim aliquam. Convallis, faucibus, nec tortor id." 
+}

@@ -1,0 +1,29 @@
+{ 
+  "backgroundColor": "#36454f",
+  "color": "#ffffff",
+  "heading": "Full Service Real Estate",
+  "column1": {
+    "heading": "Services for Buyers",
+    "entries": [
+      "Exclusive Pre-Market Access",
+      "Neighborhood Analytics",
+      "Bidding Strategy",
+      "Investment Potential Analysis",
+      "Renovation & Upgrade Consultation",
+      "Comprehensive Relocation Services",
+      "Post Purchase Support"
+    ]
+  },
+  "column2": {
+    "heading": "Services for Sellers",
+    "entries": [
+      "Home Staging Expertise",
+      "High Quality Marketing Materials",
+      "Targeted Digital Marketing Campaigns",
+      "Competitive Market Analysis",
+      "Open House Management",
+      "Legal & Compliance Assistance",
+      "Post Sale Support"
+    ]
+  }
+}

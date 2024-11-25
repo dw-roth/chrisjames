@@ -1,0 +1,67 @@
+---
+import { getComponentDataNoId } from '../scripts/utils.js';
+
+const data = await getComponentDataNoId('success');
+const backgroundColor = data.backgroundColor;
+const color = data.color;
+---
+<section class="section">
+    <h2>
+      {data.heading}
+    </h2>
+    <div class="grid-container">
+        {
+          data.entries.map((entry) => (
+          <div class="services-item">
+            <div class="title">
+              <h3>Title</h3>
+            </div>
+            <div class="item">
+              {entry}
+            </div>
+          </div>
+            ))
+        }
+    </div>
+</section>
+
+<style define:vars={{ backgroundColor, color }}>
+  .section {
+    background-color: var(--backgroundColor);
+    color: var(--color);
+    max-width: none;
+    padding: 3rem 5% 7rem 5%;
+  }
+  .section > h2 {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto-fill;
+    grid-template-rows: 150px;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    justify-content: center;
+    border: 2px solid green;
+  }
+  .services-heading {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  .services-item {
+    border: 2px solid red;
+    width: 150px;
+    height: 150px;
+    padding-left: .5rem;
+    width: 250px;
+  }
+  .services-item > .item {
+    font-size: .9rem;
+  }
+
+</style>

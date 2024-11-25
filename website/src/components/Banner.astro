@@ -1,0 +1,24 @@
+---
+import { getComponentDataNoId } from '../scripts/utils.js';
+
+const data = await getComponentDataNoId('banner');
+const backgroundColor = data.backgroundColor;
+const color = data.color;
+---
+<section>
+  <span class="text-size-small">Read our client <a href="/success/" class="footer-link">testimonials</a></span>
+</section>
+
+<style define:vars={{ backgroundColor, color }}>
+  section {
+      background-color: var(--backgroundColor);
+      padding: 10px 2rem 10px 2rem;
+      text-align: center;
+  }
+  span {
+    font-size: 1.3rem;
+    color: var(--color);
+  a {
+    color: var(--color);
+  }
+</style>

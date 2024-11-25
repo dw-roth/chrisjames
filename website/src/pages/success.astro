@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ClientShowcase from '../components/ClientShowcase.astro';
+import SuccessMetrics from '../components/SuccessMetrics.astro';
+---
+<BaseLayout>
+
+  <section class="header">
+    <h1>Client Testimonials</h1>
+    
+    <p>At Chris James Real Estate, we take pride in helping our clients achieve their real estate goals. Below are some of our recent clients and their testimonials.</p>
+  </section>
+
+  <ClientShowcase id="01" />
+  <ClientShowcase id="02" />
+  <ClientShowcase id="03" />
+  <ClientShowcase id="05" />
+  <ClientShowcase id="06" />
+  <ClientShowcase id="07" />
+  <ClientShowcase id="08" />
+  <ClientShowcase id="09" />
+  <ClientShowcase id="10" />
+  <ClientShowcase id="11" />
+</BaseLayout>
+
+<style>
+  .header {
+    padding: 3rem 5% 7rem 5%;
+  }
+
+  .header > p {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  .stats {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 40px;
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import { getComponentDataNoId } from '../scripts/utils.js';
+
+const data = await getComponentDataNoId('header');
+const backgroundColor = data.backgroundColor;
+const color = data.color;
+---
+<header>
+  <h1 class="roboto-serif"><a href="/index.html">{data.logoText}</a></h1>
+  <div class="header-right">
+    <a href="/#contact">{data.ctaText}</a>
+  </div>
+</header>
+
+<style define:vars={{ backgroundColor, color }}>
+  header {
+      background-color: var(--backgroundColor);
+      padding: 10px 2rem 10px 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  h1 {
+      color: var(--color);
+      margin: 0;
+  }
+  h1 > a {
+    color: white;
+    text-decoration: none;
+  }
+  .header-right > a {
+      background-color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      border: none;
+      text-decoration: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      letter-spacing: .05rem;
+      text-transform: uppercase;
+  }
+  .header-right > span {
+    margin-right: 20px;
+  }
+  .text-size-small > a {
+    color: white;
+  }
+/* bootstrap 'small' screen goes up to 768px. Because of the language
+ * in the hero section, we go to small screen mode a little sooner, at 795px.
+ * Changes in the wording may required an updated breakpoint */
+@media screen and (max-width: 795px) {
+    header {
+        padding: 10px 1rem 10px 1rem;
+    }
+    h1 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+}
+</style>

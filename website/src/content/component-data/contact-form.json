@@ -1,0 +1,14 @@
+{ 
+  "gradientStart" : "#007f7f",
+  "gradientEnd": "#007f7f",
+  "btnBkgndColorHover": "#ad5a1f",
+  "btnBkgndColor": "#824417",
+  "btnActiveBorderColor": "#95350b",
+  "btnTextColor": "#ffffff",
+  "color": "#ffffff",
+  "heading": "Contact Chris James",
+  "subheading": "Leave me your contact information and the best times to contact you. Alternatively, use my contact information below to contact me directly.",
+  "email": "chrisjames8671@gmail.com",
+  "phone": "+12012803586",
+  "displayPhone": "+1 (201) 280-3586"
+}
